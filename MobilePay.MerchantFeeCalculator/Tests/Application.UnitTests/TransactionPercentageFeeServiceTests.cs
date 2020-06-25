@@ -2,7 +2,6 @@
 using Application.TransactionFees.MerchantPercentageDiscounts;
 using Domain;
 using FluentAssertions;
-using System;
 using Xunit;
 
 namespace Application.UnitTests
@@ -10,15 +9,15 @@ namespace Application.UnitTests
     public class TransactionPercentageFeeServiceTests
     {
         [Theory]
-        [InlineData("2018-09-02", "CIRCLE_K", 120, 1.20)]
-        [InlineData("2018-09-04", "Telia", 200, 2.00)]
-        [InlineData("2018-10-22", "CIRCLE_K", 300, 3.00)]
-        [InlineData("2018-10-29", "CIRCLE_K", 150, 1.50)]
+        [InlineData("CIRCLE_K", 120, 1.20)]
+        [InlineData("TELIA", 200, 2.00)]
+        [InlineData("CIRCLE_K", 300, 3.00)]
+        [InlineData("CIRCLE_K", 150, 1.50)]
         public void CalculateMerchantFee_ForAnyTransaction_ShouldCalculateStandardTransactionFee(
-            DateTime date, string merchantName, decimal amount, decimal expected)
+            string merchantName, decimal amount, decimal expected)
         {
             // Arrange
-            var transaction = new Transaction(date, merchantName, amount);
+            var transaction = new Transaction { MerchantName = merchantName, Amount = amount };
             var sut = new TransactionPercentageFeeService();
 
             // Act
@@ -30,15 +29,15 @@ namespace Application.UnitTests
         }
 
         [Theory]
-        [InlineData("2018-09-02", "TELIA", 120, 1.08)]
-        [InlineData("2018-09-04", "TELIA", 200, 1.80)]
-        [InlineData("2018-10-22", "TELIA", 300, 2.70)]
-        [InlineData("2018-10-29", "TELIA", 150, 1.35)]
+        [InlineData("TELIA", 120, 1.08)]
+        [InlineData("TELIA", 200, 1.80)]
+        [InlineData("TELIA", 300, 2.70)]
+        [InlineData("TELIA", 150, 1.35)]
         public void CalculateMerchantFee_ForTeliaTransaction_ShouldApplyDiscount(
-            DateTime date, string merchantName, decimal amount, decimal expected)
+            string merchantName, decimal amount, decimal expected)
         {
             // Arrange
-            var transaction = new Transaction(date, merchantName, amount);
+            var transaction = new Transaction { MerchantName = merchantName, Amount = amount };
             var transactionFeeService = new TransactionPercentageFeeService();
             var sut = new TeliaTransactionFeeMerchantPercentageDiscountDecorator(transactionFeeService);
 
@@ -51,15 +50,15 @@ namespace Application.UnitTests
         }
 
         [Theory]
-        [InlineData("2018-09-02", "CIRCLE_K", 120, 0.96)]
-        [InlineData("2018-09-04", "CIRCLE_K", 200, 1.60)]
-        [InlineData("2018-10-22", "CIRCLE_K", 300, 2.40)]
-        [InlineData("2018-10-29", "CIRCLE_K", 150, 1.20)]
+        [InlineData("CIRCLE_K", 120, 0.96)]
+        [InlineData("CIRCLE_K", 200, 1.60)]
+        [InlineData("CIRCLE_K", 300, 2.40)]
+        [InlineData("CIRCLE_K", 150, 1.20)]
         public void CalculateMerchantFee_ForCircleKTransaction_ShouldApplyDiscount(
-            DateTime date, string merchantName, decimal amount, decimal expected)
+            string merchantName, decimal amount, decimal expected)
         {
             // Arrange
-            var transaction = new Transaction(date, merchantName, amount);
+            var transaction = new Transaction { MerchantName = merchantName, Amount = amount };
             var transactionFeeService = new TransactionPercentageFeeService();
             var sut = new CircleKTransactionFeeMerchantPercentageDiscountDecorator(transactionFeeService);
 
