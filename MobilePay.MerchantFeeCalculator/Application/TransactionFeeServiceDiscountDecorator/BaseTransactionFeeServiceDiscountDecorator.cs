@@ -1,8 +1,8 @@
 ﻿using Domain;
 
-namespace Application.TransactionPercentageFeeDecorators
+namespace Application.TransactionFeeServiceDiscountDecorator
 {
-    public class BaseTransactionFeeServiceDiscountDecorator : BaseTransactionFeeService
+    public abstract class BaseTransactionFeeServiceDiscountDecorator : BaseTransactionFeeService
     {
         protected BaseTransactionFeeService _transactionFeeService;
 

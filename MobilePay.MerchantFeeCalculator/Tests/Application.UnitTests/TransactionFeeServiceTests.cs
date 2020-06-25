@@ -1,5 +1,4 @@
-﻿using Application.TransactionPercentageFeeDecorators;
-using AutoFixture;
+﻿using Application.TransactionFeeServiceDiscountDecorator.MerchantPercentageDiscountDecorator;
 using Domain;
 using FluentAssertions;
 using System;
