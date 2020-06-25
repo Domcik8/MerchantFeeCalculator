@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MobilePay.MerchantFeeCalculator
+namespace Api
 {
     class Program
     {

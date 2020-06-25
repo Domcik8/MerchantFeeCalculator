@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePay.MerchantFeeCalculator", "MobilePay.MerchantFeeCalculator\MobilePay.MerchantFeeCalculator.csproj", "{7E0250DA-56AC-4563-9839-A2E41A3F9BDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{AA437562-4B25-4B2D-BCDA-25B7E73CF3F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{74759B2C-EB4F-4330-87C7-45BC55598CFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B8C12D96-A607-4520-A1ED-8B49AE283674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{8BA5A4FA-6587-44C8-8813-D14EB2C01126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{90FD7E08-741D-4BC7-B759-7E87538B4BE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.UnitTests", "Tests\Application.UnitTests\Application.UnitTests.csproj", "{94A7D4FF-D4B3-455D-8236-CEC6BDDA041F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +21,32 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7E0250DA-56AC-4563-9839-A2E41A3F9BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E0250DA-56AC-4563-9839-A2E41A3F9BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E0250DA-56AC-4563-9839-A2E41A3F9BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E0250DA-56AC-4563-9839-A2E41A3F9BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA437562-4B25-4B2D-BCDA-25B7E73CF3F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA437562-4B25-4B2D-BCDA-25B7E73CF3F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA437562-4B25-4B2D-BCDA-25B7E73CF3F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA437562-4B25-4B2D-BCDA-25B7E73CF3F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74759B2C-EB4F-4330-87C7-45BC55598CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74759B2C-EB4F-4330-87C7-45BC55598CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74759B2C-EB4F-4330-87C7-45BC55598CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74759B2C-EB4F-4330-87C7-45BC55598CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BA5A4FA-6587-44C8-8813-D14EB2C01126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BA5A4FA-6587-44C8-8813-D14EB2C01126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BA5A4FA-6587-44C8-8813-D14EB2C01126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BA5A4FA-6587-44C8-8813-D14EB2C01126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90FD7E08-741D-4BC7-B759-7E87538B4BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90FD7E08-741D-4BC7-B759-7E87538B4BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90FD7E08-741D-4BC7-B759-7E87538B4BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90FD7E08-741D-4BC7-B759-7E87538B4BE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94A7D4FF-D4B3-455D-8236-CEC6BDDA041F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A7D4FF-D4B3-455D-8236-CEC6BDDA041F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A7D4FF-D4B3-455D-8236-CEC6BDDA041F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A7D4FF-D4B3-455D-8236-CEC6BDDA041F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{94A7D4FF-D4B3-455D-8236-CEC6BDDA041F} = {B8C12D96-A607-4520-A1ED-8B49AE283674}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B38611A-40D4-4623-BE80-559FA70CDC22}
