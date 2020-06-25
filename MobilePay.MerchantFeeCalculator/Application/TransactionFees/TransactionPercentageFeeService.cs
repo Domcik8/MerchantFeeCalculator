@@ -1,12 +1,12 @@
 ﻿using Domain;
 
-namespace Application
+namespace Application.TransactionFees
 {
-    public class TransactionPercentageFeeService : BaseTransactionFeeService
+    public class TransactionPercentageFeeService : BaseMerchantFeeService
     {
         public const decimal StandardTransactionPercentageFee = 0.01m;
 
-        public override void CalculateTransactionFee(Transaction transaction)
+        public override void CalculateMerchantFee(Transaction transaction)
         {
             CalculateStandardTransactionPercentageFee(transaction);
         }

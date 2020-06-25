@@ -1,4 +1,5 @@
-﻿using Application.TransactionFeeServiceDiscountDecorator.MerchantPercentageDiscountDecorator;
+﻿using Application.TransactionFees;
+using Application.TransactionFees.MerchantPercentageDiscounts;
 using Domain;
 using FluentAssertions;
 using System;
@@ -39,10 +40,10 @@ namespace Application.UnitTests
             // Arrange
             var transaction = new Transaction(date, merchantName, amount);
             var transactionFeeService = new TransactionPercentageFeeService();
-            var sut = new TeliaTransactionPercentageFeeDecorator(transactionFeeService);
+            var sut = new TeliaTransactionFeeMerchantPercentageDiscountDecorator(transactionFeeService);
 
             // Act
-            sut.CalculateTransactionFee(transaction);
+            sut.CalculateMerchantFee(transaction);
             var actual = transaction.Fee;
 
             // Assert
@@ -60,10 +61,10 @@ namespace Application.UnitTests
             // Arrange
             var transaction = new Transaction(date, merchantName, amount);
             var transactionFeeService = new TransactionPercentageFeeService();
-            var sut = new CircleKTransactionPercentageFeeDecorator(transactionFeeService);
+            var sut = new CircleKTransactionFeeMerchantPercentageDiscountDecorator(transactionFeeService);
 
             // Act
-            sut.CalculateTransactionFee(transaction);
+            sut.CalculateMerchantFee(transaction);
             var actual = transaction.Fee;
 
             // Assert
