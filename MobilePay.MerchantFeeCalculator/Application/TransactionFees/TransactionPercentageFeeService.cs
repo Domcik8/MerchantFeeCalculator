@@ -8,10 +8,10 @@ namespace Application.TransactionFees
 
         public override void CalculateMerchantFee(Transaction transaction)
         {
-            CalculateStandardTransactionPercentageFee(transaction);
+            CalculateTransactionPercentageFee(transaction);
         }
 
-        public void CalculateStandardTransactionPercentageFee(Transaction transaction)
+        public void CalculateTransactionPercentageFee(Transaction transaction)
         {
             transaction.Fee = transaction.Amount * StandardTransactionPercentageFee;
         }

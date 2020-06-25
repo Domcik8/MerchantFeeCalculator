@@ -19,7 +19,11 @@ namespace Application.TransactionFees.MerchantPercentageDiscounts.Base
         public override void CalculateMerchantFee(Transaction transaction)
         {
             base.CalculateMerchantFee(transaction);
+            ApplyMerchantDiscount(transaction);
+        }
 
+        public void ApplyMerchantDiscount(Transaction transaction)
+        {
             if (transaction.MerchantName == MerchantName)
                 transaction.Fee *= 1 - FeeDiscountPercentage;
         }
