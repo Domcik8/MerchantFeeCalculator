@@ -4,6 +4,6 @@ namespace Application
 {
     public interface ITransactionFeeService
     {
-        public void CalculateTransactionFee(Transaction transaction);
+        public decimal CalculateTransactionFee(Transaction transaction);
     }
 }

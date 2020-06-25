@@ -6,9 +6,7 @@ namespace Application
     {
         public const decimal TransactionFee = 0.01m;
 
-        public void CalculateTransactionFee(Transaction transaction)
-        {
-            transaction.Fee = transaction.Amount * TransactionFee;
-        }
+        public decimal CalculateTransactionFee(Transaction transaction)
+            => transaction.Amount * TransactionFee;
     }
 }

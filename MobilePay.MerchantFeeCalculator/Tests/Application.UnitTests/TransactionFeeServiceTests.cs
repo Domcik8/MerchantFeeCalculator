@@ -21,11 +21,10 @@ namespace Application.UnitTests
             var sut = new Fixture().Create<TransactionFeeService>();
 
             // Act
-            sut.CalculateTransactionFee(transaction);
-            var actual = transaction.Fee;
+            var actual = sut.CalculateTransactionFee(transaction);
 
             // Assert
-            actual.Should().Equals(expectedFee);
+            actual.Should().Be(expectedFee);
         }
     }
 }
