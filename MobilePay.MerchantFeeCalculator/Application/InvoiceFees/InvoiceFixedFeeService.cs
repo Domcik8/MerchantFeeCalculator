@@ -13,15 +13,7 @@ namespace Application.TransactionFees
 
         private void CalculateInvoiceFixedFee(Transaction transaction)
         {
-            if (IsFreeTransaction(transaction))
-                return;
-
             transaction.Fee += StandardInvoiceFixedFee;
-        }
-
-        private bool IsFreeTransaction(Transaction transaction)
-        {
-            return transaction.Fee <= 0;
         }
     }
 }

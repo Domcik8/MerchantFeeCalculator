@@ -1,4 +1,5 @@
-﻿using Application.TransactionFees;
+﻿using Application.InvoiceFees.Rules;
+using Application.TransactionFees;
 using Domain;
 using FluentAssertions;
 using Xunit;
@@ -13,7 +14,8 @@ namespace Application.UnitTests.InvoiceFees.Rules
         {
             // Arrange
             var transaction = new Transaction { Fee = fee };
-            var sut = new InvoiceFixedFeeService();
+            var invoiceFeeService = new InvoiceFixedFeeService();
+            var sut = new FreeFeeInvoiceFixedFeeDecorator(invoiceFeeService);
             var expected = 0;
 
             // Act
