@@ -2,26 +2,18 @@
 
 namespace Application
 {
-    public class TransactionPercentageFeeService : ITransactionFeeService
+    public class TransactionPercentageFeeService : BaseTransactionFeeService
     {
         public const decimal StandardTransactionPercentageFee = 0.01m;
-        public const decimal TeliaTransactionPercantageFeeDiscount = 0.1m;
-        public const decimal CircleKTransactionPercantageFeeDiscount = 0.2m;
 
-        public decimal CalculateTransactionFee(Transaction transaction)
+        public override void CalculateTransactionFee(Transaction transaction)
         {
-            var fee = CalculateStandardTransactionFee(transaction);
-
-            if (transaction.MerchantName == "TELIA")
-                fee *= (1 - TeliaTransactionPercantageFeeDiscount);
-
-            if (transaction.MerchantName == "CIRCLE_K")
-                fee *= (1 - CircleKTransactionPercantageFeeDiscount);
-
-            return fee;
+            CalculateStandardTransactionPercentageFee(transaction);
         }
 
-        public decimal CalculateStandardTransactionFee(Transaction transaction)
-            => transaction.Amount * StandardTransactionPercentageFee;
+        public void CalculateStandardTransactionPercentageFee(Transaction transaction)
+        {
+            transaction.Fee = transaction.Amount * StandardTransactionPercentageFee;
+        }
     }
 }

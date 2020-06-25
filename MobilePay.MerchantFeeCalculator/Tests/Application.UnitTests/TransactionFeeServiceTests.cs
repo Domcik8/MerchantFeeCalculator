@@ -1,4 +1,5 @@
-﻿using AutoFixture;
+﻿using Application.TransactionPercentageFeeDecorators;
+using AutoFixture;
 using Domain;
 using FluentAssertions;
 using System;
@@ -18,10 +19,11 @@ namespace Application.UnitTests
         {
             // Arrange
             var transaction = new Transaction(date, merchantName, amount);
-            var sut = new Fixture().Create<TransactionPercentageFeeService>();
+            var sut = new TransactionPercentageFeeService();
 
             // Act
-            var actual = sut.CalculateStandardTransactionFee(transaction);
+            sut.CalculateStandardTransactionPercentageFee(transaction);
+            var actual = transaction.Fee;
 
             // Assert
             actual.Should().Be(expectedFee);
@@ -37,10 +39,12 @@ namespace Application.UnitTests
         {
             // Arrange
             var transaction = new Transaction(date, merchantName, amount);
-            var sut = new Fixture().Create<TransactionPercentageFeeService>();
+            var transactionFeeService = new TransactionPercentageFeeService();
+            var sut = new TeliaTransactionPercentageFeeDecorator(transactionFeeService);
 
             // Act
-            var actual = sut.CalculateTransactionFee(transaction);
+            sut.CalculateTransactionFee(transaction);
+            var actual = transaction.Fee;
 
             // Assert
             actual.Should().Be(expectedFee);
@@ -52,14 +56,16 @@ namespace Application.UnitTests
         [InlineData("2018-10-22", "CIRCLE_K", 300, 2.40)]
         [InlineData("2018-10-29", "CIRCLE_K", 150, 1.20)]
         public void CalculateTransactionFee_ForCircleKTransaction_ShouldCalculateFeeWithCircleKDiscount(
-    DateTime date, string merchantName, decimal amount, decimal expectedFee)
+            DateTime date, string merchantName, decimal amount, decimal expectedFee)
         {
             // Arrange
             var transaction = new Transaction(date, merchantName, amount);
-            var sut = new Fixture().Create<TransactionPercentageFeeService>();
+            var transactionFeeService = new TransactionPercentageFeeService();
+            var sut = new CircleKTransactionPercentageFeeDecorator(transactionFeeService);
 
             // Act
-            var actual = sut.CalculateTransactionFee(transaction);
+            sut.CalculateTransactionFee(transaction);
+            var actual = transaction.Fee;
 
             // Assert
             actual.Should().Be(expectedFee);
