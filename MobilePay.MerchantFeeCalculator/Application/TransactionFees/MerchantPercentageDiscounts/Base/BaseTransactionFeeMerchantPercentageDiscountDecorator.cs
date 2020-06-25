@@ -9,8 +9,8 @@ namespace Application.TransactionFees.MerchantPercentageDiscounts.Base
         protected decimal FeeDiscountPercentage { get; }
 
         public BaseTransactionFeeMerchantPercentageDiscountDecorator(
-            BaseMerchantFeeService transactionFeeService, string merchantName, decimal feeDiscountPercentage)
-            : base(transactionFeeService)
+            BaseMerchantFeeService merchantFeeService, string merchantName, decimal feeDiscountPercentage)
+            : base(merchantFeeService)
         {
             MerchantName = merchantName;
             FeeDiscountPercentage = feeDiscountPercentage;
