@@ -11,7 +11,7 @@ namespace Application.TransactionFees
             CalculateTransactionPercentageFee(transaction);
         }
 
-        public void CalculateTransactionPercentageFee(Transaction transaction)
+        private void CalculateTransactionPercentageFee(Transaction transaction)
         {
             transaction.Fee = transaction.Amount * StandardTransactionPercentageFee;
         }

@@ -22,7 +22,7 @@ namespace Application.TransactionFees.MerchantPercentageDiscounts.Base
             ApplyMerchantDiscount(transaction);
         }
 
-        public void ApplyMerchantDiscount(Transaction transaction)
+        private void ApplyMerchantDiscount(Transaction transaction)
         {
             if (transaction.MerchantName == MerchantName)
                 transaction.Fee *= 1 - FeeDiscountPercentage;

@@ -14,19 +14,19 @@ namespace Application.UnitTests
         [InlineData("2018-09-04", "Telia", 200, 2.00)]
         [InlineData("2018-10-22", "CIRCLE_K", 300, 3.00)]
         [InlineData("2018-10-29", "CIRCLE_K", 150, 1.50)]
-        public void CalculateMerchantFee_ForAnyTransaction_ShouldCalculateFee(
-            DateTime date, string merchantName, decimal amount, decimal expectedFee)
+        public void CalculateMerchantFee_ForAnyTransaction_ShouldCalculateStandardTransactionFee(
+            DateTime date, string merchantName, decimal amount, decimal expected)
         {
             // Arrange
             var transaction = new Transaction(date, merchantName, amount);
             var sut = new TransactionPercentageFeeService();
 
             // Act
-            sut.CalculateTransactionPercentageFee(transaction);
+            sut.CalculateMerchantFee(transaction);
             var actual = transaction.Fee;
 
             // Assert
-            actual.Should().Be(expectedFee);
+            actual.Should().Be(expected);
         }
 
         [Theory]
@@ -35,7 +35,7 @@ namespace Application.UnitTests
         [InlineData("2018-10-22", "TELIA", 300, 2.70)]
         [InlineData("2018-10-29", "TELIA", 150, 1.35)]
         public void CalculateMerchantFee_ForTeliaTransaction_ShouldApplyDiscount(
-            DateTime date, string merchantName, decimal amount, decimal expectedFee)
+            DateTime date, string merchantName, decimal amount, decimal expected)
         {
             // Arrange
             var transaction = new Transaction(date, merchantName, amount);
@@ -47,7 +47,7 @@ namespace Application.UnitTests
             var actual = transaction.Fee;
 
             // Assert
-            actual.Should().Be(expectedFee);
+            actual.Should().Be(expected);
         }
 
         [Theory]
@@ -56,7 +56,7 @@ namespace Application.UnitTests
         [InlineData("2018-10-22", "CIRCLE_K", 300, 2.40)]
         [InlineData("2018-10-29", "CIRCLE_K", 150, 1.20)]
         public void CalculateMerchantFee_ForCircleKTransaction_ShouldApplyDiscount(
-            DateTime date, string merchantName, decimal amount, decimal expectedFee)
+            DateTime date, string merchantName, decimal amount, decimal expected)
         {
             // Arrange
             var transaction = new Transaction(date, merchantName, amount);
@@ -68,7 +68,7 @@ namespace Application.UnitTests
             var actual = transaction.Fee;
 
             // Assert
-            actual.Should().Be(expectedFee);
+            actual.Should().Be(expected);
         }
     }
 }
