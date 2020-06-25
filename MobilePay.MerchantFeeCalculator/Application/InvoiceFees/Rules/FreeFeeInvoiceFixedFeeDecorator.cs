@@ -3,6 +3,9 @@ using Domain;
 
 namespace Application.InvoiceFees.Rules
 {
+    /// <summary>
+    /// Exclude invoice fee for transactions without a fee.
+    /// </summary>
     public class FreeFeeInvoiceFixedFeeDecorator : BaseMerchantFeeDecorator
     {
         public FreeFeeInvoiceFixedFeeDecorator(BaseMerchantFeeService transactionFeeService)
