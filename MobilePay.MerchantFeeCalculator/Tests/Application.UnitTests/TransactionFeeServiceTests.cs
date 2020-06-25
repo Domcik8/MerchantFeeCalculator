@@ -18,7 +18,7 @@ namespace Application.UnitTests
         {
             // Arrange
             var transaction = new Transaction(date, merchantName, amount);
-            var sut = new Fixture().Create<TransactionFeeService>();
+            var sut = new Fixture().Create<TransactionPercentageFeeService>();
 
             // Act
             var actual = sut.CalculateStandardTransactionFee(transaction);
@@ -37,7 +37,7 @@ namespace Application.UnitTests
         {
             // Arrange
             var transaction = new Transaction(date, merchantName, amount);
-            var sut = new Fixture().Create<TransactionFeeService>();
+            var sut = new Fixture().Create<TransactionPercentageFeeService>();
 
             // Act
             var actual = sut.CalculateTransactionFee(transaction);
