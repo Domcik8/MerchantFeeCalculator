@@ -1,4 +1,4 @@
-﻿using Application.TransactionFees;
+﻿using Application.InvoiceFees.Components;
 using Domain;
 using FluentAssertions;
 using Xunit;

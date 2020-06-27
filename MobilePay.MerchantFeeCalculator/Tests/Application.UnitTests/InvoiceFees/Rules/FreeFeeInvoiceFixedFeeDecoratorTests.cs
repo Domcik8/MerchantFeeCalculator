@@ -1,5 +1,5 @@
-﻿using Application.InvoiceFees.Rules;
-using Application.TransactionFees;
+﻿using Application.InvoiceFees.Components;
+using Application.InvoiceFees.Decorators;
 using Domain;
 using FluentAssertions;
 using Xunit;

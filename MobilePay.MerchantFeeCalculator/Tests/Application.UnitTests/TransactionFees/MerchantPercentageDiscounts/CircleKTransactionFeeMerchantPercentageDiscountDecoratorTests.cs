@@ -1,5 +1,5 @@
-﻿using Application.TransactionFees;
-using Application.TransactionFees.MerchantPercentageDiscounts;
+﻿using Application.TransactionFees.Components;
+using Application.TransactionFees.Decorators.MerchantPercentageDiscounts;
 using Domain;
 using FluentAssertions;
 using Xunit;

@@ -1,4 +1,4 @@
-﻿using Application.TransactionFees;
+﻿using Application.TransactionFees.Components;
 using Application.TransactionFees.MerchantPercentageDiscounts;
 using Domain;
 using FluentAssertions;

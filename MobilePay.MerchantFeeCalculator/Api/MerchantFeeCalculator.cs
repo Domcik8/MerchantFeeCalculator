@@ -1,5 +1,6 @@
 ﻿using Application;
-using Application.TransactionFees;
+using Application.TransactionFees.Components;
+using Application.TransactionFees.Decorators.MerchantPercentageDiscounts;
 using Application.TransactionFees.MerchantPercentageDiscounts;
 using Infrastructure;
 
@@ -13,6 +14,8 @@ namespace Api
             BaseMerchantFeeService merchantFeeService = new TransactionPercentageFeeService();
             merchantFeeService = new TeliaTransactionFeeMerchantPercentageDiscountDecorator(merchantFeeService);
             merchantFeeService = new CircleKTransactionFeeMerchantPercentageDiscountDecorator(merchantFeeService);
+
+
 
             var merchantFeeCalculator = new MerchantFeeCalculatorService(transactionRepository, merchantFeeService);
             merchantFeeCalculator.CalculateFees();

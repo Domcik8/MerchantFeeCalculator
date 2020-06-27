@@ -1,14 +1,13 @@
-﻿using Application.TransactionFees.MerchantPercentageDiscounts;
-using Domain;
+﻿using Domain;
 using System;
 using System.Collections.Generic;
 
-namespace Application.InvoiceFees.Rules
+namespace Application.InvoiceFees.Decorators
 {
     /// <summary>
     /// Add invoice fixed fee only to first transaction in the month.
     /// </summary>
-    public class FirstMonthlyInvoiceFixedFeeDecorator : BaseMerchantFeeDecorator
+    public class FirstMonthlyInvoiceFixedFeeDecorator : BaseInvoiceFeeDecorator
     {
         /// <summary>
         /// Month for which the fee is being calculated.
@@ -17,10 +16,10 @@ namespace Application.InvoiceFees.Rules
 
         private List<string> IssuedMonthlyFees = new List<string>();
 
-        public FirstMonthlyInvoiceFixedFeeDecorator(BaseMerchantFeeService transactionFeeService)
-            : base(transactionFeeService) { }
+        public FirstMonthlyInvoiceFixedFeeDecorator(BaseInvoiceFeeService invoiceFeeService)
+            : base(invoiceFeeService) { }
 
-        public override void CalculateMerchantFee(Transaction transaction)
+        public override void CalculateInvoiceFee(Transaction transaction)
         {
             if (IsNewFeeMonth(transaction))
                 UpdateFeeMonth(transaction);
@@ -30,7 +29,7 @@ namespace Application.InvoiceFees.Rules
 
             IssuedMonthlyFees.Add(transaction.MerchantName);
 
-            base.CalculateMerchantFee(transaction);
+            base.CalculateInvoiceFee(transaction);
         }
 
         private bool IsNewFeeMonth(Transaction transaction)

@@ -1,24 +1,24 @@
 ﻿using Domain;
 
-namespace Application.TransactionFees.MerchantPercentageDiscounts.Base
+namespace Application.TransactionFees.Decorators.MerchantPercentageDiscounts.Base
 {
     public abstract class BaseTransactionFeeMerchantPercentageDiscountDecorator
-        : BaseMerchantFeeDecorator
+        : BaseTransactionFeeDecorator
     {
         protected string MerchantName { get; }
         protected decimal FeeDiscountPercentage { get; }
 
         public BaseTransactionFeeMerchantPercentageDiscountDecorator(
-            BaseMerchantFeeService merchantFeeService, string merchantName, decimal feeDiscountPercentage)
-            : base(merchantFeeService)
+            BaseTransactionFeeService transactionFeeService, string merchantName, decimal feeDiscountPercentage)
+            : base(transactionFeeService)
         {
             MerchantName = merchantName;
             FeeDiscountPercentage = feeDiscountPercentage;
         }
 
-        public override void CalculateMerchantFee(Transaction transaction)
+        public override void CalculateTransactionFee(Transaction transaction)
         {
-            base.CalculateMerchantFee(transaction);
+            base.CalculateTransactionFee(transaction);
             ApplyMerchantDiscount(transaction);
         }
 
