@@ -10,7 +10,7 @@ namespace Api.IntegrationTest
         public void CalculateFeesTest_WithTransactionsFile_ShouldWriteExpectedConsoleOutput()
         {
             // Arrange
-            using StreamReader expectedOutput = new StreamReader("Expected.Result.txt.");
+            using StreamReader expectedOutput = new StreamReader("Expected.Result.txt");
             var expected = expectedOutput.ReadToEnd();
 
             using StringWriter actualOutput = new StringWriter();
