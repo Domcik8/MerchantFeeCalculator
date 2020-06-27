@@ -2,13 +2,12 @@
 
 namespace Application.TransactionFees.Decorators.MerchantPercentageDiscounts.Base
 {
-    public abstract class BaseTransactionFeeMerchantPercentageDiscountDecorator
-        : BaseTransactionFeeDecorator
+    public abstract class BaseMerchantPercentageDiscountDecorator : BaseTransactionFeeDecorator
     {
         protected string MerchantName { get; }
         protected decimal FeeDiscountPercentage { get; }
 
-        public BaseTransactionFeeMerchantPercentageDiscountDecorator(
+        public BaseMerchantPercentageDiscountDecorator(
             BaseTransactionFeeService transactionFeeService, string merchantName, decimal feeDiscountPercentage)
             : base(transactionFeeService)
         {

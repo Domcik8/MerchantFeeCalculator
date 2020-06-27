@@ -19,7 +19,7 @@ namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts
             // Arrange
             var transaction = new Transaction { MerchantName = merchantName, Amount = amount };
             var transactionFeeService = new TransactionPercentageFeeService();
-            var sut = new CircleKTransactionFeeMerchantPercentageDiscountDecorator(transactionFeeService);
+            var sut = new CircleKPercentageDiscountDecorator(transactionFeeService);
 
             // Act
             sut.CalculateMerchantFee(transaction);

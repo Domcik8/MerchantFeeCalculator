@@ -12,8 +12,8 @@ namespace Api
         {
             var transactionRepository = new TxtTransactionRepository();
             BaseMerchantFeeService merchantFeeService = new TransactionPercentageFeeService();
-            merchantFeeService = new TeliaTransactionFeeMerchantPercentageDiscountDecorator(merchantFeeService);
-            merchantFeeService = new CircleKTransactionFeeMerchantPercentageDiscountDecorator(merchantFeeService);
+            merchantFeeService = new TeliaPercentageDiscountDecorator(merchantFeeService);
+            merchantFeeService = new CircleKPercentageDiscountDecorator(merchantFeeService);
 
 
 

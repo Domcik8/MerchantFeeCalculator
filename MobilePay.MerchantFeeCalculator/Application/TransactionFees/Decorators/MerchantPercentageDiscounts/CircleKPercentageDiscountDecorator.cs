@@ -2,14 +2,12 @@
 
 namespace Application.TransactionFees.Decorators.MerchantPercentageDiscounts
 {
-    public class CircleKTransactionFeeMerchantPercentageDiscountDecorator
-        : BaseTransactionFeeMerchantPercentageDiscountDecorator
+    public class CircleKPercentageDiscountDecorator : BaseMerchantPercentageDiscountDecorator
     {
         private const string CircleKMerchantName = "CIRCLE_K";
         private const decimal CircleKFeeDiscountPercentage = 0.2m;
 
-        public CircleKTransactionFeeMerchantPercentageDiscountDecorator(
-            BaseTransactionFeeService transactionFeeService)
+        public CircleKPercentageDiscountDecorator( BaseTransactionFeeService transactionFeeService)
             : base(transactionFeeService, CircleKMerchantName, CircleKFeeDiscountPercentage) { }
     }
 }
