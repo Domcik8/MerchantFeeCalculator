@@ -1,25 +1,23 @@
 ﻿using Application.TransactionFees.Components;
-using Application.TransactionFees.MerchantPercentageDiscounts;
 using Domain;
 using FluentAssertions;
 using Xunit;
 
-namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts
+namespace Application.UnitTests.TransactionFees.Components
 {
     public class TeliaTransactionFeeMerchantPercentageDiscountDecoratorTests
     {
         [Theory]
-        [InlineData("TELIA", 120, 1.08)]
-        [InlineData("TELIA", 200, 1.80)]
-        [InlineData("TELIA", 300, 2.70)]
-        [InlineData("TELIA", 150, 1.35)]
-        public void CalculateMerchantFee_ForTeliaTransaction_ShouldApplyDiscount(
+        [InlineData("CIRCLE_K", 120, 1.20)]
+        [InlineData("TELIA", 200, 2.00)]
+        [InlineData("CIRCLE_K", 300, 3.00)]
+        [InlineData("CIRCLE_K", 150, 1.50)]
+        public void CalculateMerchantFee_ForAnyTransaction_ShouldCalculateStandardTransactionFee(
             string merchantName, decimal amount, decimal expected)
         {
             // Arrange
             var transaction = new Transaction { MerchantName = merchantName, Amount = amount };
-            var transactionFeeService = new TransactionPercentageFeeService();
-            var sut = new TeliaPercentageDiscountDecorator(transactionFeeService);
+            var sut = new TransactionPercentageFeeService();
 
             // Act
             sut.CalculateMerchantFee(transaction);
