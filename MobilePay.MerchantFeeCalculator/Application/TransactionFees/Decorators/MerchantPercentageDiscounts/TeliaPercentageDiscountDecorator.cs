@@ -2,6 +2,9 @@
 
 namespace Application.TransactionFees.MerchantPercentageDiscounts
 {
+    /// <summary>
+    /// Add transaction fee percentage discount for Telia.
+    /// </summary>
     public class TeliaPercentageDiscountDecorator : BaseMerchantPercentageDiscountDecorator
     {
         private const string TeliaMerchantName = "TELIA";

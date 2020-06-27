@@ -5,7 +5,7 @@ using System;
 
 namespace Application
 {
-    public class MerchantFeeCalculatorService
+    public class MerchantFeeCalculatorService : IMerchantFeeCalculatorService
     {
         ITransactionRepository TransactionRepository { get; }
         BaseTransactionFeeService TransactionFeeService { get; }
@@ -13,7 +13,8 @@ namespace Application
 
         public MerchantFeeCalculatorService(
             ITransactionRepository transactionRepository,
-            BaseTransactionFeeService transactionFeeService, BaseInvoiceFeeService invoiceFeeService)
+            BaseTransactionFeeService transactionFeeService,
+            BaseInvoiceFeeService invoiceFeeService)
         {
             TransactionRepository = transactionRepository;
             TransactionFeeService = transactionFeeService;
@@ -34,7 +35,7 @@ namespace Application
                 TransactionFeeService.CalculateTransactionFee(transaction);
                 InvoiceFeeService.CalculateInvoiceFee(transaction);
 
-                Console.WriteLine($"{transaction.Date:d} {transaction.MerchantName, -8} {transaction.Fee:f2}");
+                Console.WriteLine($"{transaction.Date:d} {transaction.MerchantName,-8} {transaction.Fee:f2}");
             }
         }
     }

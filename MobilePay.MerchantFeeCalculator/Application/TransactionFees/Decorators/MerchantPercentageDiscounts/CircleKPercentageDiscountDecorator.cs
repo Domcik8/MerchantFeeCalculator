@@ -2,6 +2,9 @@
 
 namespace Application.TransactionFees.Decorators.MerchantPercentageDiscounts
 {
+    /// <summary>
+    /// Add transaction fee percentage discount for Circle K.
+    /// </summary>
     public class CircleKPercentageDiscountDecorator : BaseMerchantPercentageDiscountDecorator
     {
         private const string CircleKMerchantName = "CIRCLE_K";
