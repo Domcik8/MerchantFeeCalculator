@@ -1,5 +1,4 @@
-﻿using Application.TransactionFees.Components;
-using Application.TransactionFees.Decorators.MerchantPercentageDiscounts;
+﻿using Application.TransactionFees.Decorators.MerchantPercentageDiscounts;
 using Domain;
 using FluentAssertions;
 using Xunit;
@@ -18,7 +17,7 @@ namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts
         {
             // Arrange
             var transaction = new Transaction { MerchantName = merchantName, Fee = fee };
-            var transactionFeeService = new ConcreteTransactionFeeService();
+            var transactionFeeService = new TestTransactionFeeService();
             var sut = new CircleKPercentageDiscountDecorator(transactionFeeService);
 
             // Act
@@ -39,7 +38,7 @@ namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts
         {
             // Arrange
             var transaction = new Transaction { MerchantName = merchantName, Fee = fee };
-            var transactionFeeService = new ConcreteTransactionFeeService();
+            var transactionFeeService = new TestTransactionFeeService();
             var sut = new CircleKPercentageDiscountDecorator(transactionFeeService);
 
             // Act

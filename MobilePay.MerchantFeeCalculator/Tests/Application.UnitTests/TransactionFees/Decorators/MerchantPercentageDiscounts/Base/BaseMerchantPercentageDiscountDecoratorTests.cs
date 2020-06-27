@@ -18,7 +18,7 @@ namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts.Base
         {
             // Arrange
             var transaction = new Transaction { MerchantName = merchantName, Fee = fee };
-            var transactionFeeService = new ConcreteTransactionFeeService();
+            var transactionFeeService = new TestTransactionFeeService();
             var sut = new ConcretePercentageDiscountDecorator(transactionFeeService);
 
             // Act
@@ -39,7 +39,7 @@ namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts.Base
         {
             // Arrange
             var transaction = new Transaction { MerchantName = merchantName, Fee = fee };
-            var transactionFeeService = new ConcreteTransactionFeeService();
+            var transactionFeeService = new TestTransactionFeeService();
             var sut = new ConcretePercentageDiscountDecorator(transactionFeeService);
 
             // Act

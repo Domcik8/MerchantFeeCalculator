@@ -3,7 +3,7 @@ using Domain;
 
 namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts
 {
-    public class ConcreteTransactionFeeService : BaseTransactionFeeService
+    public class TestTransactionFeeService : BaseTransactionFeeService
     {
         public override void CalculateTransactionFee(Transaction transaction) { }
     }

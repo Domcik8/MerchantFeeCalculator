@@ -18,7 +18,7 @@ namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts
         {
             // Arrange
             var transaction = new Transaction { MerchantName = merchantName, Fee = fee };
-            var transactionFeeService = new ConcreteTransactionFeeService();
+            var transactionFeeService = new TestTransactionFeeService();
             var sut = new TeliaPercentageDiscountDecorator(transactionFeeService);
 
             // Act
@@ -39,7 +39,7 @@ namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts
         {
             // Arrange
             var transaction = new Transaction { MerchantName = merchantName, Fee = fee };
-            var transactionFeeService = new ConcreteTransactionFeeService();
+            var transactionFeeService = new TestTransactionFeeService();
             var sut = new TeliaPercentageDiscountDecorator(transactionFeeService);
 
             // Act
