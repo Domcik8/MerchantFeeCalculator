@@ -1,22 +1,22 @@
 ﻿using Application.InvoiceFees.Components;
+using Application.InvoiceFees.Decorators;
 using Domain;
 using FluentAssertions;
 using Xunit;
 
-namespace Application.UnitTests.InvoiceFees
+namespace Application.UnitTests.InvoiceFees.Rules
 {
     public class FreeFeeInvoiceFixedFeeDecoratorTests
     {
         [Theory]
-        [InlineData(120)]
-        [InlineData(10)]
-        [InlineData(300)]
-        public void CalculateMerchantFee_ForNonFreeTransaction_ShouldIncludeInvoiceFee(decimal fee)
+        [InlineData(0)]
+        public void CalculateMerchantFee_ForFreeTransaction_ShouldNotIncludeInvoiceFee(decimal fee)
         {
             // Arrange
             var transaction = new Transaction { Fee = fee };
-            var sut = new InvoiceFixedFeeService();
-            var expected = fee + InvoiceFixedFeeService.StandardInvoiceFixedFee;
+            var invoiceFeeService = new TestInvoiceFeeService();
+            var sut = new FreeFeeInvoiceFixedFeeDecorator(invoiceFeeService);
+            var expected = 0;
 
             // Act
             sut.CalculateMerchantFee(transaction);

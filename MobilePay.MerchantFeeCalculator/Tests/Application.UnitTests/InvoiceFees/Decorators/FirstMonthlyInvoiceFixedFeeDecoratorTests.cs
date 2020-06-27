@@ -13,17 +13,21 @@ namespace Application.UnitTests.InvoiceFees.Rules
         public void CalculateMerchantFee_ForMoreThenOneMonthlyTransactions_ShouldNotIncludeInvoiceFee()
         {
             // Arrange
-            var transaction1 = new Transaction { Date = new DateTime(2018, 09, 02), MerchantName = "7-Eleven", Fee = 1 };
-            var transaction2 = new Transaction { Date = new DateTime(2018, 09, 05), MerchantName = "Netto", Fee = 1 };
-            var transaction3 = new Transaction { Date = new DateTime(2018, 10, 22), MerchantName = "7-Eleven", Fee = 1 };
-            var transaction4 = new Transaction { Date = new DateTime(2018, 10, 29), MerchantName = "7-Eleven", Fee = 1 };
+            var transaction1 =
+                new Transaction { Date = new DateTime(2018, 09, 02), MerchantName = "7-Eleven", Fee = 1 };
+            var transaction2 =
+                new Transaction { Date = new DateTime(2018, 09, 05), MerchantName = "Netto", Fee = 1 };
+            var transaction3 =
+                new Transaction { Date = new DateTime(2018, 10, 22), MerchantName = "7-Eleven", Fee = 1 };
+            var transaction4 =
+                new Transaction { Date = new DateTime(2018, 10, 29), MerchantName = "7-Eleven", Fee = 1 };
 
-            var expected1 = transaction1.Fee + InvoiceFixedFeeService.StandardInvoiceFixedFee;
-            var expected2 = transaction2.Fee + InvoiceFixedFeeService.StandardInvoiceFixedFee;
-            var expected3 = transaction3.Fee + InvoiceFixedFeeService.StandardInvoiceFixedFee;
+            var expected1 = transaction1.Fee + TestInvoiceFeeService.StandardInvoiceFixedFee;
+            var expected2 = transaction2.Fee + TestInvoiceFeeService.StandardInvoiceFixedFee;
+            var expected3 = transaction3.Fee + TestInvoiceFeeService.StandardInvoiceFixedFee;
             var expected4 = transaction4.Fee;
 
-            var invoiceFeeService = new InvoiceFixedFeeService();
+            var invoiceFeeService = new TestInvoiceFeeService();
             var sut = new FirstMonthlyInvoiceFixedFeeDecorator(invoiceFeeService);
 
             // Act
