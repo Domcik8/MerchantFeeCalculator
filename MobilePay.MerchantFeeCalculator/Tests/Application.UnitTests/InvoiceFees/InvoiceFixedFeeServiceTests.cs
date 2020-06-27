@@ -1,7 +1,6 @@
 ﻿using Application.TransactionFees;
 using Domain;
 using FluentAssertions;
-using System;
 using Xunit;
 
 namespace Application.UnitTests.InvoiceFees
