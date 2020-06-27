@@ -1,4 +1,6 @@
-﻿using Infrastructure;
+﻿using Application.InvoiceFees;
+using Application.TransactionFees;
+using Infrastructure;
 using System;
 
 namespace Application
@@ -6,13 +8,16 @@ namespace Application
     public class MerchantFeeCalculatorService
     {
         ITransactionRepository TransactionRepository { get; }
-        BaseMerchantFeeService MerchantFeeService { get; }
+        BaseTransactionFeeService TransactionFeeService { get; }
+        BaseInvoiceFeeService InvoiceFeeService { get; }
 
         public MerchantFeeCalculatorService(
-            ITransactionRepository transactionRepository, BaseMerchantFeeService merchantFeeService)
+            ITransactionRepository transactionRepository,
+            BaseTransactionFeeService transactionFeeService, BaseInvoiceFeeService invoiceFeeService)
         {
             TransactionRepository = transactionRepository;
-            MerchantFeeService = merchantFeeService;
+            TransactionFeeService = transactionFeeService;
+            InvoiceFeeService = invoiceFeeService;
         }
 
         public void CalculateFees()
@@ -23,7 +28,8 @@ namespace Application
                 if (transaction == null)
                     continue;
 
-                MerchantFeeService.CalculateMerchantFee(transaction);
+                TransactionFeeService.CalculateTransactionFee(transaction);
+                InvoiceFeeService.CalculateInvoiceFee(transaction);
 
                 Console.WriteLine($"{transaction.Date}, {transaction.MerchantName}, " +
                     $"{transaction.Amount}, {transaction.Fee}");

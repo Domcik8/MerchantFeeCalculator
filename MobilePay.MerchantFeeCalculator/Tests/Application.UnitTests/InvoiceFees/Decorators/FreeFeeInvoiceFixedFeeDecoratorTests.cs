@@ -19,7 +19,7 @@ namespace Application.UnitTests.InvoiceFees.Rules
             var expected = 0;
 
             // Act
-            sut.CalculateMerchantFee(transaction);
+            sut.CalculateInvoiceFee(transaction);
             var actual = transaction.Fee;
 
             // Assert

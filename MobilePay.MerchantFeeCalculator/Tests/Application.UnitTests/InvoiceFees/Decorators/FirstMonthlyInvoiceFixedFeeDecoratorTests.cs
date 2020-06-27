@@ -31,16 +31,16 @@ namespace Application.UnitTests.InvoiceFees.Rules
             var sut = new FirstMonthlyInvoiceFixedFeeDecorator(invoiceFeeService);
 
             // Act
-            sut.CalculateMerchantFee(transaction1);
+            sut.CalculateInvoiceFee(transaction1);
             var actual1 = transaction1.Fee;
 
-            sut.CalculateMerchantFee(transaction2);
+            sut.CalculateInvoiceFee(transaction2);
             var actual2 = transaction2.Fee;
 
-            sut.CalculateMerchantFee(transaction3);
+            sut.CalculateInvoiceFee(transaction3);
             var actual3 = transaction3.Fee;
 
-            sut.CalculateMerchantFee(transaction4);
+            sut.CalculateInvoiceFee(transaction4);
             var actual4 = transaction4.Fee;
 
             // Assert

@@ -22,7 +22,7 @@ namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts.Base
             var sut = new ConcretePercentageDiscountDecorator(transactionFeeService);
 
             // Act
-            sut.CalculateMerchantFee(transaction);
+            sut.CalculateTransactionFee(transaction);
             var actual = transaction.Fee;
 
             // Assert
@@ -43,7 +43,7 @@ namespace Application.UnitTests.TransactionFees.MerchantPercentageDiscounts.Base
             var sut = new ConcretePercentageDiscountDecorator(transactionFeeService);
 
             // Act
-            sut.CalculateMerchantFee(transaction);
+            sut.CalculateTransactionFee(transaction);
             var actual = transaction.Fee;
 
             // Assert

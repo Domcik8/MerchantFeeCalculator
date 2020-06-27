@@ -10,15 +10,15 @@ namespace Api
     {
         public void CalculateFees()
         {
-            var transactionRepository = new TxtTransactionRepository();
-            BaseMerchantFeeService merchantFeeService = new TransactionPercentageFeeService();
-            merchantFeeService = new TeliaPercentageDiscountDecorator(merchantFeeService);
-            merchantFeeService = new CircleKPercentageDiscountDecorator(merchantFeeService);
+            //var transactionRepository = new TxtTransactionRepository();
+            //BaseMerchantFeeService merchantFeeService = new TransactionPercentageFeeService();
+            //merchantFeeService = new TeliaPercentageDiscountDecorator(merchantFeeService);
+            //merchantFeeService = new CircleKPercentageDiscountDecorator(merchantFeeService);
 
 
 
-            var merchantFeeCalculator = new MerchantFeeCalculatorService(transactionRepository, merchantFeeService);
-            merchantFeeCalculator.CalculateFees();
+            //var merchantFeeCalculator = new MerchantFeeCalculatorService(transactionRepository, merchantFeeService);
+            //merchantFeeCalculator.CalculateFees();
         }
     }
 }

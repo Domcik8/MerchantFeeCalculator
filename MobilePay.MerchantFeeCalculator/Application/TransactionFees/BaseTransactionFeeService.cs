@@ -2,13 +2,8 @@
 
 namespace Application.TransactionFees
 {
-    public abstract class BaseTransactionFeeService : BaseMerchantFeeService
+    public abstract class BaseTransactionFeeService
     {
-        public override void CalculateMerchantFee(Transaction transaction)
-        {
-            CalculateTransactionFee(transaction);
-        }
-
         public abstract void CalculateTransactionFee(Transaction transaction);
     }
 }

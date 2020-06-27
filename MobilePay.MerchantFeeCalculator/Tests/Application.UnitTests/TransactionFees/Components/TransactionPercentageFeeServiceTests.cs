@@ -20,7 +20,7 @@ namespace Application.UnitTests.TransactionFees.Components
             var sut = new TransactionPercentageFeeService();
 
             // Act
-            sut.CalculateMerchantFee(transaction);
+            sut.CalculateTransactionFee(transaction);
             var actual = transaction.Fee;
 
             // Assert

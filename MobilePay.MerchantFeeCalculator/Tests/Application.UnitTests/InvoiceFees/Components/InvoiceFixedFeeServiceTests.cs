@@ -19,7 +19,7 @@ namespace Application.UnitTests.InvoiceFees.Components
             var expected = fee + InvoiceFixedFeeService.StandardInvoiceFixedFee;
 
             // Act
-            sut.CalculateMerchantFee(transaction);
+            sut.CalculateInvoiceFee(transaction);
             var actual = transaction.Fee;
 
             // Assert
