@@ -14,9 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Correct.Transactions.WithEmptyLines.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Correct.Transactions.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

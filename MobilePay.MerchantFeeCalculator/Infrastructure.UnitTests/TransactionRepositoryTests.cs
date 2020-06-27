@@ -10,7 +10,7 @@ namespace Infrastructure.UnitTests
         public void TransactionRepository_WithNotExistingTransactionFile_ThrowFileNotFoundException()
         {
             // Arrange
-            var sut = new TransactionRepository("InvalidPath");
+            var sut = new TxtTransactionRepository("InvalidPath");
 
             // Act && Assert
             sut.Invoking(sut => sut.GetTransaction())
@@ -19,12 +19,12 @@ namespace Infrastructure.UnitTests
 
         [Theory]
         [InlineData(3)]
-        public void TransactionRepository_WithFileWithAllCorrectTransactionsWithoutEmptyLines_FetchesAllTransactions(
+        public void TransactionRepository_WithCorrectTransactions_FetchesCorrectTransactions(
             int expectedCountOfTransactions)
         {
             // Arrange
             var actualTransactionCount = 0;
-            var sut = new TransactionRepository("Correct.Transactions.txt");
+            var sut = new TxtTransactionRepository("Correct.Transactions.txt");
 
             // Act && Assert
             while (sut.HasUnhandledTransactions())
@@ -39,18 +39,18 @@ namespace Infrastructure.UnitTests
 
         [Theory]
         [InlineData(3)]
-        public void TransactionRepository_WithFileWithAllCorrectTransactionsWithEmptyLines_FetchesAllTransactions(
+        public void TransactionRepository_WithIncorrectTransactions_FetchesCorrectTransactions(
             int expectedCountOfTransactions)
         {
             // Arrange
             var actualTransactionCount = 0;
-            var sut = new TransactionRepository("Correct.Transactions.WithEmptyLines.txt");
+            var sut = new TxtTransactionRepository("Incorrect.Transactions.txt");
 
             // Act && Assert
             while (sut.HasUnhandledTransactions())
             {
-                var line = sut.GetTransaction();
-                if (line != null)
+                var transaction = sut.GetTransaction();
+                if (transaction != null)
                     actualTransactionCount++;
             }
 

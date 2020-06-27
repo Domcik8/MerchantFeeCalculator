@@ -4,7 +4,14 @@ namespace Infrastructure
 {
     public interface ITransactionRepository
     {
+        /// <summary>
+        /// Check if there are transactions that have not been handled.
+        /// </summary>
         public bool HasUnhandledTransactions();
-        public string GetTransaction();
+
+        /// <summary>
+        /// Get next unhandled transaction.
+        /// </summary>
+        public Transaction GetTransaction();
     }
 }
