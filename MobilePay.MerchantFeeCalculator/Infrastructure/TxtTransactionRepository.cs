@@ -10,7 +10,7 @@ namespace Infrastructure
     /// </summary>
     public class TxtTransactionRepository : ITransactionRepository
     {
-        // Corresponds to Date MerchantName Amount
+        // Corresponds to Date MerchantName Amount. E.g. 2020-06-27 TELIA 100
         private readonly string _transactionPattern = @"^(\d{4})-(\d{2})-(\d{2})\s+(\S+)\s+(\S+)$";
         private readonly string _transactionFilePath;
         private StreamReader _transactionFile;
@@ -24,9 +24,7 @@ namespace Infrastructure
 
                 return _transactionFile;
             }
-            set { }
         }
-
 
         public TxtTransactionRepository() : this("transactions.txt") { }
 
