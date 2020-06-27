@@ -26,13 +26,15 @@ namespace Application
             {
                 var transaction = TransactionRepository.GetTransaction();
                 if (transaction == null)
+                {
+                    Console.WriteLine();
                     continue;
+                }
 
                 TransactionFeeService.CalculateTransactionFee(transaction);
                 InvoiceFeeService.CalculateInvoiceFee(transaction);
 
-                Console.WriteLine($"{transaction.Date}, {transaction.MerchantName}, " +
-                    $"{transaction.Amount}, {transaction.Fee}");
+                Console.WriteLine($"{transaction.Date:d} {transaction.MerchantName, -8} {transaction.Fee:f2}");
             }
         }
     }
