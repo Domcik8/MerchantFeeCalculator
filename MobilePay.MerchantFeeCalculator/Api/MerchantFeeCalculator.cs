@@ -1,11 +1,10 @@
 ﻿using Application;
-using Application.InvoiceFees;
-using Application.InvoiceFees.Components;
-using Application.InvoiceFees.Decorators;
-using Application.TransactionFees;
-using Application.TransactionFees.Components;
-using Application.TransactionFees.Decorators.MerchantPercentageDiscounts;
+using Application.InvoiceFees.Base;
+using Application.InvoiceFees.Rules;
+using Application.InvoiceFees.Types;
+using Application.TransactionFees.Base;
 using Application.TransactionFees.MerchantPercentageDiscounts;
+using Application.TransactionFees.Types;
 using Infrastructure;
 
 namespace Api
@@ -21,8 +20,8 @@ namespace Api
             transactionFeeService = new CircleKPercentageDiscountDecorator(transactionFeeService);
 
             BaseInvoiceFeeService invoiceFeeService = new InvoiceFixedFeeService();
-            invoiceFeeService = new FirstMonthlyInvoiceFixedFeeDecorator(invoiceFeeService);
-            invoiceFeeService = new FreeFeeInvoiceFixedFeeDecorator(invoiceFeeService);
+            invoiceFeeService = new FirstMonthlyInvoiceFixedFeeRuleDecorator(invoiceFeeService);
+            invoiceFeeService = new FreeFeeInvoiceFixedFeeRuleDecorator(invoiceFeeService);
             
             var merchantFeeCalculator =
                 new MerchantFeeCalculatorService(transactionRepository, transactionFeeService, invoiceFeeService);

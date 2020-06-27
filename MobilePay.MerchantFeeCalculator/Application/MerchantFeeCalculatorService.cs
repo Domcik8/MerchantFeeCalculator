@@ -1,5 +1,5 @@
-﻿using Application.InvoiceFees;
-using Application.TransactionFees;
+﻿using Application.InvoiceFees.Base;
+using Application.TransactionFees.Base;
 using Infrastructure;
 using System;
 

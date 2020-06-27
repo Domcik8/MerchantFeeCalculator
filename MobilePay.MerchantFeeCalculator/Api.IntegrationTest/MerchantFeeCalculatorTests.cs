@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentAssertions;
+using System;
 using System.IO;
 using Xunit;
 
@@ -23,7 +24,7 @@ namespace Api.IntegrationTest
             var actual = actualOutput.ToString();
 
             // Assert
-            Assert.Equal(expected, actual);
+            expected.Should().Be(actual);
         }
     }
 }
