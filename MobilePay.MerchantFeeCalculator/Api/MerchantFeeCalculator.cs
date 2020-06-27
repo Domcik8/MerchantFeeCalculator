@@ -20,8 +20,8 @@ namespace Api
             transactionFeeService = new CircleKPercentageDiscountDecorator(transactionFeeService);
 
             BaseInvoiceFeeService invoiceFeeService = new InvoiceFixedFeeService();
-            invoiceFeeService = new FirstMonthlyInvoiceFixedFeeRuleDecorator(invoiceFeeService);
-            invoiceFeeService = new FreeFeeInvoiceFixedFeeRuleDecorator(invoiceFeeService);
+            invoiceFeeService = new FirstMonthlyInvoiceFeeRuleDecorator(invoiceFeeService);
+            invoiceFeeService = new FreeInvoiceFeeRuleDecorator(invoiceFeeService);
             
             var merchantFeeCalculator =
                 new MerchantFeeCalculatorService(transactionRepository, transactionFeeService, invoiceFeeService);

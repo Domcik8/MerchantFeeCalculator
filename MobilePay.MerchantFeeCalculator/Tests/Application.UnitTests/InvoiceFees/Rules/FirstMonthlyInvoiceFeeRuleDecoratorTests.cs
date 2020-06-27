@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Application.UnitTests.InvoiceFees.Rules
 {
-    public class FirstMonthlyInvoiceFixedFeeRuleDecoratorTests
+    public class FirstMonthlyInvoiceFeeRuleDecoratorTests
     {
         [Fact]
         public void CalculateMerchantFee_ForMoreThenOneMonthlyTransactions_ShouldNotIncludeInvoiceFee()
@@ -27,7 +27,7 @@ namespace Application.UnitTests.InvoiceFees.Rules
             var expected4 = transaction4.Fee;
 
             var invoiceFeeService = new TestInvoiceFeeService();
-            var sut = new FirstMonthlyInvoiceFixedFeeRuleDecorator(invoiceFeeService);
+            var sut = new FirstMonthlyInvoiceFeeRuleDecorator(invoiceFeeService);
 
             // Act
             sut.CalculateInvoiceFee(transaction1);

@@ -8,7 +8,7 @@ namespace Application.InvoiceFees.Rules
     /// <summary>
     /// Add invoice fixed fee only to first transaction in the month.
     /// </summary>
-    public class FirstMonthlyInvoiceFixedFeeRuleDecorator : BaseInvoiceFeeDecorator
+    public class FirstMonthlyInvoiceFeeRuleDecorator : BaseInvoiceFeeDecorator
     {
         /// <summary>
         /// Month for which the fee is being calculated.
@@ -17,7 +17,7 @@ namespace Application.InvoiceFees.Rules
 
         private List<string> IssuedMonthlyFees = new List<string>();
 
-        public FirstMonthlyInvoiceFixedFeeRuleDecorator(BaseInvoiceFeeService invoiceFeeService)
+        public FirstMonthlyInvoiceFeeRuleDecorator(BaseInvoiceFeeService invoiceFeeService)
             : base(invoiceFeeService) { }
 
         public override void CalculateInvoiceFee(Transaction transaction)

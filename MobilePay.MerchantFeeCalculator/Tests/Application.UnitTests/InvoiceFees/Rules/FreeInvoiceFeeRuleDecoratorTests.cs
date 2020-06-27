@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Application.UnitTests.InvoiceFees.Rules
 {
-    public class FreeFeeInvoiceFixedFeeRuleDecoratorTests
+    public class FreeInvoiceFeeRuleDecoratorTests
     {
         [Theory]
         [InlineData(0)]
@@ -14,7 +14,7 @@ namespace Application.UnitTests.InvoiceFees.Rules
             // Arrange
             var transaction = new Transaction { Fee = fee };
             var invoiceFeeService = new TestInvoiceFeeService();
-            var sut = new FreeFeeInvoiceFixedFeeRuleDecorator(invoiceFeeService);
+            var sut = new FreeInvoiceFeeRuleDecorator(invoiceFeeService);
             var expected = 0;
 
             // Act

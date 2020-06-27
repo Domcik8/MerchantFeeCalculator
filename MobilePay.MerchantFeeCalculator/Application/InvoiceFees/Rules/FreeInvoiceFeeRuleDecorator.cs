@@ -6,9 +6,9 @@ namespace Application.InvoiceFees.Rules
     /// <summary>
     /// Exclude invoice fee for transactions without a fee.
     /// </summary>
-    public class FreeFeeInvoiceFixedFeeRuleDecorator : BaseInvoiceFeeDecorator
+    public class FreeInvoiceFeeRuleDecorator : BaseInvoiceFeeDecorator
     {
-        public FreeFeeInvoiceFixedFeeRuleDecorator(BaseInvoiceFeeService invoiceFeeService) : base(invoiceFeeService) { }
+        public FreeInvoiceFeeRuleDecorator(BaseInvoiceFeeService invoiceFeeService) : base(invoiceFeeService) { }
 
         public override void CalculateInvoiceFee(Transaction transaction)
         {
