@@ -37,30 +37,30 @@
 +-----------------------------------------------------------------------------------------------------------
 |                                                                                                           
 | Business requirements:                                                                                    
-✔ | - App should calculate fees per transaction @done(20-06-27 17:04)
-✔ | - App should take transactions from the file named transactions.txt with the following format: @done(20-06-27 17:05)
-✔ |   Date merchantName amount @done(20-06-27 17:05)
-✔ | - transactions.txt will always contain transactions ordered by date ASC @done(20-06-27 17:05)
-✔ | - App should output result to console with the following format: @done(20-06-27 17:05)
-✔ |   Date merchantName fee @done(20-06-27 17:05)
-✔ | - Fee amount should be formatted like this 25.00 @done(20-06-27 17:05)
-✔ | - Date should be formatted like this YYYY-MM-DD @done(20-06-27 17:05)
+| - App should calculate fees per transaction
+| - App should take transactions from the file named transactions.txt with the following format:
+|   Date merchantName amount
+| - transactions.txt will always contain transactions ordered by date ASC
+| - App should output result to console with the following format:
+|   Date merchantName fee
+| - Fee amount should be formatted like this 25.00
+| - Date should be formatted like this YYYY-MM-DD
 |                                                                                                           
 +-----------------------------------------------------------------------------------------------------------
 |                                                                                                           
 | Technical requirements:                                                                                   
-✔ | - App should be written as Console application in C# (.NET Framework or .NET Core) @done(20-06-25 11:07)
-✔ | - Usage of external libraries are prohibited (except tests) @done(20-06-27 17:06)
-✔ | - Output should be written to console @done(20-06-27 17:06)
-✔ | - Ubiqutous language should be used in the solution - @done(20-06-25 19:49)
-✔ |   https://www.agilealliance.org/glossary/ubiquitous-language @done(20-06-25 19:49)
-✔ | - Documentation is optional, if there is a need - put in README.md file @done(20-06-25 19:49)
-✔ | - Source code should be pushed to a publicly available git repository (GitHub, GitLab, Bitbucket, ...) @done(20-06-27 17:06)
-✔ | - Code should be flexible enough to change, add or remove rules @done(20-06-27 17:06)
-✔ | - Code should be covered with tests @done(20-06-27 17:06)
-✔ | - Clean code principles should be applied @done(20-06-27 17:06)
-✔ | - App should output transaction fee as soon as it processes transaction (app should not load all @done(20-06-27 17:06)
-✔ |   transactions to memory) @done(20-06-27 17:06)
+| - App should be written as Console application in C# (.NET Framework or .NET Core)
+| - Usage of external libraries are prohibited (except tests)
+| - Output should be written to console
+| - Ubiqutous language should be used in the solution -
+|   https://www.agilealliance.org/glossary/ubiquitous-language
+| - Documentation is optional, if there is a need - put in README.md file
+| - Source code should be pushed to a publicly available git repository (GitHub, GitLab, Bitbucket, ...)
+| - Code should be flexible enough to change, add or remove rules
+| - Code should be covered with tests
+| - Clean code principles should be applied
+| - App should output transaction fee as soon as it processes transaction (app should not load all
+|   transactions to memory)
 |                                                                                                           
 +-----------------------------------------------------------------------------------------------------------
 |                                                                                                           
@@ -86,16 +86,16 @@
 |                                                                                                           
 | Acceptance criteria:                                                                                      
 |                                                                                                           
-✔ | Given that 120 DKK transaction is made to CIRCLE_K     on 2018-09-02 @done(20-06-25 11:56)
-✔ | And        200 DKK transaction is made to TELIA        on 2018-09-04 @done(20-06-25 11:56)
-✔ | And        300 DKK transaction is made to CIRCLE_K     on 2018-10-22 @done(20-06-25 11:56)
-✔ | And        150 DKK transaction is made to CIRCLE_K     on 2018-10-29 @done(20-06-25 11:56)
-✔ | When fees calculation app is executed @done(20-06-25 11:56)
+| Given that 120 DKK transaction is made to CIRCLE_K     on 2018-09-02
+| And        200 DKK transaction is made to TELIA        on 2018-09-04
+| And        300 DKK transaction is made to CIRCLE_K     on 2018-10-22
+| And        150 DKK transaction is made to CIRCLE_K     on 2018-10-29
+| When fees calculation app is executed
 | Then the output is:                                                                                       
-✔ |     2018-09-02 CIRCLE_K 1.20 @done(20-06-25 11:56)
-✔ |     2018-09-04 TELIA    2.00 @done(20-06-25 11:56)
-✔ |     2018-10-22 CIRCLE_K 3.00 @done(20-06-25 11:56)
-✔ |     2018-10-29 CIRCLE_K 1.50 @done(20-06-25 11:56)
+|     2018-09-02 CIRCLE_K 1.20
+|     2018-09-04 TELIA    2.00
+|     2018-10-22 CIRCLE_K 3.00
+|     2018-10-29 CIRCLE_K 1.50
 |                                                                                                           
 +-----------------------------------------------------------------------------------------------------------
 
@@ -111,16 +111,15 @@
 +-----------------------------------------------------------------------------------------------------------
 |                                                                                                           
 | Acceptance criteria:                                                                                      
-✔ | Given that 120 DKK transaction is made to TELIA on 2018-09-02 @done(20-06-25 12:21)
-✔ | And        200 DKK transaction is made to TELIA on 2018-09-04 @done(20-06-25 12:21)
-✔ | And        300 DKK transaction is made to TELIA on 2018-10-22 @done(20-06-25 12:21)
-✔ | And        150 DKK transaction is made to TELIA on 2018-10-29 @done(20-06-25 12:21)
-✔ | When fees calculation app is executed @done(20-06-25 12:21)
+| Given that 120 DKK transaction is made to TELIA on 2018-09-02
+| And        200 DKK transaction is made to TELIA on 2018-09-04
+| And        300 DKK transaction is made to TELIA on 2018-10-22
+| And        150 DKK transaction is made to TELIA on 2018-10-29
 | Then the output is:                                                                                  
-✔ |     2018-09-02 TELIA 1.08 @done(20-06-25 12:21)
-✔ |     2018-09-04 TELIA 1.80 @done(20-06-25 12:21)
-✔ |     2018-10-22 TELIA 2.70 @done(20-06-25 12:21)
-✔ |     2018-10-29 TELIA 1.35 @done(20-06-25 12:21)
+|     2018-09-02 TELIA 1.08
+|     2018-09-04 TELIA 1.80
+|     2018-10-22 TELIA 2.70
+|     2018-10-29 TELIA 1.35
 |                                                                                                           
 +-----------------------------------------------------------------------------------------------------------
     
@@ -136,16 +135,16 @@
 +-----------------------------------------------------------------------------------------------------------
 |                                                                                                           
 | Acceptance criteria:                                                                                      
-✔ | Given that 120 DKK transaction is made to CIRCLE_K on 2018-09-02 @done(20-06-25 12:26)
-✔ | And        200 DKK transaction is made to CIRCLE_K on 2018-09-04 @done(20-06-25 12:26)
-✔ | And        300 DKK transaction is made to CIRCLE_K on 2018-10-22 @done(20-06-25 12:26)
-✔ | And        150 DKK transaction is made to CIRCLE_K on 2018-10-29 @done(20-06-25 12:26)
-✔ | When fees calculation app is executed @done(20-06-25 12:26)
+| Given that 120 DKK transaction is made to CIRCLE_K on 2018-09-02
+| And        200 DKK transaction is made to CIRCLE_K on 2018-09-04
+| And        300 DKK transaction is made to CIRCLE_K on 2018-10-22
+| And        150 DKK transaction is made to CIRCLE_K on 2018-10-29
+| When fees calculation app is executed
 | Then the output is:                                                                                  
-✔ |     2018-09-02 CIRCLE_K 0.96 @done(20-06-25 12:26)
-✔ |     2018-09-04 CIRCLE_K 1.60 @done(20-06-25 12:26)
-✔ |     2018-10-22 CIRCLE_K 2.40 @done(20-06-25 12:26)
-✔ |     2018-10-29 CIRCLE_K 1.20 @done(20-06-25 12:26)
+|     2018-09-02 CIRCLE_K 0.96
+|     2018-09-04 CIRCLE_K 1.60
+|     2018-10-22 CIRCLE_K 2.40
+|     2018-10-29 CIRCLE_K 1.20
 |                                                                                                           
 +-----------------------------------------------------------------------------------------------------------
 
@@ -168,11 +167,11 @@
 +-----------------------------------------------------------------------------------------------------------
 |                                                                                                           
 | Acceptance criteria:                                                                                       
-✔ | Given that 120 DKK transaction is made to 7-ELEVEN     on 2018-09-02 @done(20-06-25 19:47)
-✔ | And        200 DKK transaction is made to NETTO        on 2018-09-04 @done(20-06-25 19:47)
-✔ | And        300 DKK transaction is made to 7-ELEVEN     on 2018-10-22 @done(20-06-25 19:47)
-✔ | And        150 DKK transaction is made to 7-ELEVEN     on 2018-10-29 @done(20-06-25 19:47)
-✔ | When fees calculation app is executed @done(20-06-25 19:47)
+| Given that 120 DKK transaction is made to 7-ELEVEN     on 2018-09-02
+| And        200 DKK transaction is made to NETTO        on 2018-09-04
+| And        300 DKK transaction is made to 7-ELEVEN     on 2018-10-22
+| And        150 DKK transaction is made to 7-ELEVEN     on 2018-10-29
+| When fees calculation app is executed
 | Then the output is:                                                                                  
 |     2018-09-02 7-ELEVEN 30.20                                                                        
 |     2018-09-04 NETTO    31.00                                                                           

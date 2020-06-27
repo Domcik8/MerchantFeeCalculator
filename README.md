@@ -1,6 +1,6 @@
 # MerchantFeeCalculator
 MobilePay helper app for calculating merchant fees.
-For project requirements check: [a relative link](ProjectRequirements.md).
+For project requirements check [here](ProjectRequirements.md).
 
 # Possible configuration:
 - Modify Transaction and Invoice Fee services base functionality by introducing different BaseTransactionFeeServices.
