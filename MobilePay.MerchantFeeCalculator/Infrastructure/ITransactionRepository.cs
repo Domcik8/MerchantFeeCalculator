@@ -4,6 +4,7 @@ namespace Infrastructure
 {
     public interface ITransactionRepository
     {
-        public Transaction GetTransaction();
+        public bool HasUnhandledTransactions();
+        public string GetTransaction();
     }
 }

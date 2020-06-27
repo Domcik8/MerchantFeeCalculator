@@ -1,38 +1,48 @@
 ﻿using Domain;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace Infrastructure
 {
     public class TransactionRepository : ITransactionRepository
     {
-        public string TransactionFilePath { get; }
+        private string _transactionFilePath;
+        private StreamReader _transactionFile;
+
+        public StreamReader TransactionFile
+        {
+            get
+            {
+                if (_transactionFile == null)
+                    _transactionFile = new StreamReader(_transactionFilePath);
+
+                return _transactionFile;
+            }
+            set { }
+        }
+
 
         public TransactionRepository() : this("transactions.txt") { }
 
         public TransactionRepository(string transactionFilePath)
         {
-            TransactionFilePath = transactionFilePath;
+            _transactionFilePath = transactionFilePath;
         }
 
-        public Transaction GetTransaction()
+        public bool HasUnhandledTransactions()
         {
-            var file = new StreamReader(TransactionFilePath);
+            return !TransactionFile.EndOfStream;
+        }
 
-            // Read line.
-            // Yield transaction.
+        public string GetTransaction()
+        {
+            var line = TransactionFile.ReadLine();
 
-            while (!file.EndOfStream)
-            {
-                var line = file.ReadLine();
+            if (line.Trim() == String.Empty)
+                return null;
 
-                Console.WriteLine(line);
-            }
-
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
-
-            return null;
+            return line;
         }
     }
 }
