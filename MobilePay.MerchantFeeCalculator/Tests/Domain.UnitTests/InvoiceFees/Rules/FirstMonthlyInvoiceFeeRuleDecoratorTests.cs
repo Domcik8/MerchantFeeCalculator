@@ -13,13 +13,13 @@ namespace Domain.UnitTests.InvoiceFees.Rules
         {
             // Arrange
             var transaction1 =
-                new Transaction { Date = new DateTime(2018, 09, 02), MerchantName = "7-Eleven", Fee = 1 };
+                new Transaction { Date = new DateTime(2018, 09, 02), MerchantName = "7-ELEVEN", Fee = 1 };
             var transaction2 =
-                new Transaction { Date = new DateTime(2018, 09, 05), MerchantName = "Netto", Fee = 1 };
+                new Transaction { Date = new DateTime(2018, 09, 05), MerchantName = "NETTO", Fee = 1 };
             var transaction3 =
-                new Transaction { Date = new DateTime(2018, 10, 22), MerchantName = "7-Eleven", Fee = 1 };
+                new Transaction { Date = new DateTime(2018, 10, 22), MerchantName = "7-ELEVEN", Fee = 1 };
             var transaction4 =
-                new Transaction { Date = new DateTime(2018, 10, 29), MerchantName = "7-Eleven", Fee = 1 };
+                new Transaction { Date = new DateTime(2018, 10, 29), MerchantName = "7-ELEVEN", Fee = 1 };
 
             var expected1 = transaction1.Fee + TestInvoiceFeeService.StandardInvoiceFixedFee;
             var expected2 = transaction2.Fee + TestInvoiceFeeService.StandardInvoiceFixedFee;
