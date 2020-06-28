@@ -1,8 +1,9 @@
 ﻿using FluentAssertions;
+using Infrastructure.Repositories;
 using System.IO;
 using Xunit;
 
-namespace Infrastructure.UnitTests
+namespace Infrastructure.UnitTests.Repositories
 {
     public class TransactionRepositoryTests
     {

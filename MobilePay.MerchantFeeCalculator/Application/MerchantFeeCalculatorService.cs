@@ -1,6 +1,6 @@
 ﻿using Domain.InvoiceFees.Base;
+using Domain.Repositories;
 using Domain.TransactionFees.Base;
-using Infrastructure;
 using System;
 
 namespace Application

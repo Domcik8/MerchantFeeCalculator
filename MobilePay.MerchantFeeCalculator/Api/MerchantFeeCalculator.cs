@@ -5,7 +5,7 @@ using Domain.InvoiceFees.Types;
 using Domain.TransactionFees.Base;
 using Domain.TransactionFees.MerchantPercentageDiscounts;
 using Domain.TransactionFees.Types;
-using Infrastructure;
+using Infrastructure.Repositories;
 
 namespace Api
 {

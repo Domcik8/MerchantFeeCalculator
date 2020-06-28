@@ -1,6 +1,4 @@
-﻿using Domain;
-
-namespace Infrastructure
+﻿namespace Domain.Repositories
 {
     public interface ITransactionRepository
     {

@@ -1,9 +1,10 @@
 ﻿using Domain;
+using Domain.Repositories;
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace Infrastructure
+namespace Infrastructure.Repositories
 {
     /// <summary>
     /// Transaction repository implemented over txt files.
