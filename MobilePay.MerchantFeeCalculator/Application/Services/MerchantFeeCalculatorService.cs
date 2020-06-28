@@ -3,7 +3,7 @@ using Domain.Repositories;
 using Domain.TransactionFees.Base;
 using System;
 
-namespace Application
+namespace Application.Services
 {
     public class MerchantFeeCalculatorService : IMerchantFeeCalculatorService
     {

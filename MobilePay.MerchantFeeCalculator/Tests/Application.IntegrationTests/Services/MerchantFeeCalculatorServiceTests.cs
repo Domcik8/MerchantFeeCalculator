@@ -1,4 +1,5 @@
-﻿using Domain.InvoiceFees.Base;
+﻿using Application.Services;
+using Domain.InvoiceFees.Base;
 using Domain.InvoiceFees.Rules;
 using Domain.InvoiceFees.Types;
 using Domain.TransactionFees.Base;
@@ -10,7 +11,7 @@ using System;
 using System.IO;
 using Xunit;
 
-namespace Application.IntegrationTests
+namespace Application.IntegrationTests.Services
 {
     public class MerchantFeeCalculatorServiceTests
     {
