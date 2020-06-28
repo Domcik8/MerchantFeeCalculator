@@ -1,4 +1,4 @@
-﻿namespace Application.Services
+﻿namespace Domain.Services
 {
     public interface IMerchantFeeCalculatorService
     {

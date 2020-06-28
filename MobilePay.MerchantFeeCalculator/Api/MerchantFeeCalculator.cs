@@ -1,7 +1,7 @@
-﻿using Application.Services;
-using Domain.InvoiceFees.Base;
+﻿using Domain.InvoiceFees.Base;
 using Domain.InvoiceFees.Rules;
 using Domain.InvoiceFees.Types;
+using Domain.Services;
 using Domain.TransactionFees.Base;
 using Domain.TransactionFees.MerchantPercentageDiscounts;
 using Domain.TransactionFees.Types;
