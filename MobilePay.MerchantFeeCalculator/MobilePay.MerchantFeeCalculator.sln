@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.UnitTests", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.UnitTests", "Infrastructure.UnitTests\Infrastructure.UnitTests.csproj", "{D045F420-E390-4483-B9C6-57A9FCA851AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.IntegrationTest", "Api.IntegrationTest\Api.IntegrationTest.csproj", "{E39E353D-74BC-44C8-B36D-BDC4150CA542}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.IntegrationTest", "Api.IntegrationTest\Api.IntegrationTest.csproj", "{E39E353D-74BC-44C8-B36D-BDC4150CA542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.UnitTests", "Tests\Domain.UnitTests\Domain.UnitTests.csproj", "{13F858EA-9AB3-4749-A6CF-39BC48A00AAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{E39E353D-74BC-44C8-B36D-BDC4150CA542}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E39E353D-74BC-44C8-B36D-BDC4150CA542}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E39E353D-74BC-44C8-B36D-BDC4150CA542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F858EA-9AB3-4749-A6CF-39BC48A00AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F858EA-9AB3-4749-A6CF-39BC48A00AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F858EA-9AB3-4749-A6CF-39BC48A00AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F858EA-9AB3-4749-A6CF-39BC48A00AAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{94A7D4FF-D4B3-455D-8236-CEC6BDDA041F} = {B8C12D96-A607-4520-A1ED-8B49AE283674}
 		{D045F420-E390-4483-B9C6-57A9FCA851AB} = {B8C12D96-A607-4520-A1ED-8B49AE283674}
 		{E39E353D-74BC-44C8-B36D-BDC4150CA542} = {B8C12D96-A607-4520-A1ED-8B49AE283674}
+		{13F858EA-9AB3-4749-A6CF-39BC48A00AAF} = {B8C12D96-A607-4520-A1ED-8B49AE283674}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B38611A-40D4-4623-BE80-559FA70CDC22}

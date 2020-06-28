@@ -1,10 +1,10 @@
 ﻿using Application;
-using Application.InvoiceFees.Base;
-using Application.InvoiceFees.Rules;
-using Application.InvoiceFees.Types;
-using Application.TransactionFees.Base;
-using Application.TransactionFees.MerchantPercentageDiscounts;
-using Application.TransactionFees.Types;
+using Domain.InvoiceFees.Base;
+using Domain.InvoiceFees.Rules;
+using Domain.InvoiceFees.Types;
+using Domain.TransactionFees.Base;
+using Domain.TransactionFees.MerchantPercentageDiscounts;
+using Domain.TransactionFees.Types;
 using Infrastructure;
 
 namespace Api
