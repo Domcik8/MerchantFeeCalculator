@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using Application.Services;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Api
 {
@@ -7,7 +8,7 @@ namespace Api
     {
         public static void Main()
         {
-            var merchantFeeCalculator = new MerchantFeeCalculator();
+            var merchantFeeCalculator = new MerchantFeeCalculatorApplicationService();
             merchantFeeCalculator.CalculateFees();
         }
     }

@@ -5,26 +5,14 @@ using Domain.Services;
 using Domain.TransactionFees.Base;
 using Domain.TransactionFees.MerchantPercentageDiscounts;
 using Domain.TransactionFees.Types;
-using FluentAssertions;
 using Infrastructure.Repositories;
-using System;
-using System.IO;
-using Xunit;
 
-namespace Application.IntegrationTests.Services
+namespace Application.Services
 {
-    public class MerchantFeeCalculatorServiceTests
+    public class MerchantFeeCalculatorApplicationService
     {
-        [Fact]
-        public void CalculateFeesTest_WithTransactionsFile_ShouldWriteExpectedConsoleOutput()
+        public void CalculateFees()
         {
-            // Arrange
-            using StreamReader expectedOutput = new StreamReader("Expected.Result.txt");
-            var expected = expectedOutput.ReadToEnd();
-
-            using StringWriter actualOutput = new StringWriter();
-            Console.SetOut(actualOutput);
-
             var transactionRepository = new TxtTransactionRepository();
 
             BaseTransactionFeeService transactionFeeService = new TransactionPercentageFeeService();
@@ -35,15 +23,10 @@ namespace Application.IntegrationTests.Services
             invoiceFeeService = new FirstMonthlyInvoiceFeeRuleDecorator(invoiceFeeService);
             invoiceFeeService = new FreeInvoiceFeeRuleDecorator(invoiceFeeService);
 
-            var sut =
+            var merchantFeeCalculatorService =
                 new MerchantFeeCalculatorService(transactionRepository, transactionFeeService, invoiceFeeService);
 
-            // Act
-            sut.CalculateFees();
-            var actual = actualOutput.ToString();
-
-            // Assert
-            expected.Should().Be(actual);
+            merchantFeeCalculatorService.CalculateFees();
         }
     }
 }
