@@ -1,4 +1,5 @@
-﻿using Domain.TransactionFees.Types;
+﻿using Domain.Models;
+using Domain.TransactionFees.Types;
 using FluentAssertions;
 using Xunit;
 

@@ -1,4 +1,6 @@
-﻿namespace Domain.TransactionFees.Base
+﻿using Domain.Models;
+
+namespace Domain.TransactionFees.Base
 {
     public abstract class BaseTransactionFeeDecorator : BaseTransactionFeeService
     {

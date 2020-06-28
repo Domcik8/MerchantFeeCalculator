@@ -1,4 +1,5 @@
 ﻿using Domain.InvoiceFees.Base;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 

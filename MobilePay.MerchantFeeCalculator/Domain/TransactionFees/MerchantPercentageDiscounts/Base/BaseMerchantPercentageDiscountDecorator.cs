@@ -1,4 +1,5 @@
-﻿using Domain.TransactionFees.Base;
+﻿using Domain.Models;
+using Domain.TransactionFees.Base;
 
 namespace Domain.TransactionFees.MerchantPercentageDiscounts.Base
 {

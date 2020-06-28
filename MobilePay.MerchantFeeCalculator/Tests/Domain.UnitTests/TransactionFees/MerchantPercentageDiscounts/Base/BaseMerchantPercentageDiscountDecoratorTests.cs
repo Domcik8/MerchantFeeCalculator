@@ -1,4 +1,5 @@
-﻿using Domain.TransactionFees.Base;
+﻿using Domain.Models;
+using Domain.TransactionFees.Base;
 using Domain.TransactionFees.MerchantPercentageDiscounts.Base;
 using FluentAssertions;
 using Xunit;

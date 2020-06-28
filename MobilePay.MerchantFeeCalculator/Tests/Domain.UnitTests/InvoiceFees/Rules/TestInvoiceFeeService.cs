@@ -1,4 +1,5 @@
 ﻿using Domain.InvoiceFees.Base;
+using Domain.Models;
 
 namespace Domain.UnitTests.InvoiceFees.Rules
 {

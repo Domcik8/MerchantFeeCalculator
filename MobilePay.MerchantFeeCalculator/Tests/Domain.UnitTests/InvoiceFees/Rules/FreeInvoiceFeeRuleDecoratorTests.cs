@@ -1,4 +1,5 @@
 ﻿using Domain.InvoiceFees.Rules;
+using Domain.Models;
 using FluentAssertions;
 using Xunit;
 
