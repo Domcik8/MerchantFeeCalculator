@@ -1,5 +1,4 @@
-﻿using Application;
-using Domain.InvoiceFees.Base;
+﻿using Domain.InvoiceFees.Base;
 using Domain.InvoiceFees.Rules;
 using Domain.InvoiceFees.Types;
 using Domain.TransactionFees.Base;
