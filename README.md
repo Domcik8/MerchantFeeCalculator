@@ -1,6 +1,6 @@
 # MerchantFeeCalculator
 MobilePay helper app for calculating merchant fees.
-For project requirements check [here](ProjectRequirements.txt).
+Project requirements can be found [here](ProjectRequirements.txt).
 
 # Possible configuration:
 - Modify Transaction and Invoice Fee services base functionality by introducing different BaseTransactionFeeServices.
@@ -9,10 +9,9 @@ For project requirements check [here](ProjectRequirements.txt).
 
 # Possible improvements:
 - Add Dependency Injection.
-- Implement DatabaseTransactionRepository instead of TxtTransactionRepository.
-- Encapsulate console output methods into a infrastructure singleton.
+- Encapsulate console output methods.
 - Implement parallel transaction fee calculation:
-    - Ensure that output is encapsulated into a singleton.
+    - Ensure that output methods are encapsulated into a singleton.
     - Use concurrent collection in FirstMonthlyInvoiceFeeDecorator.
 - Introduce decorator pattern into Fee services. 
     - Ability to dinamically add or remove BaseTransactionFeeServices.
